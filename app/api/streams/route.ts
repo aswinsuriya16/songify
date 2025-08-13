@@ -11,6 +11,7 @@ export async function POST(req : NextRequest) {
 
     try {
         const data = SchemaValidation.parse(await req.json());
+        console.log(data);
         const urlCheck = YT_REGEX.test(data.url)
         if(!urlCheck) {
             return NextResponse.json({
